@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Map</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.42/esri/css/esri.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.42/dijit/themes/nihilo/nihilo.css">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="https://js.arcgis.com/3.42/"></script>
+    <script src="app.js"></script>
+
+  
+  </head>
+  <body class="claro" id="map" >
+    <span id="postionCoordinate"></span>
+      <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+        <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+        <div id="layerList1"></div>
+          <div>
+            <div id="dojoUnique1" class="dojoDndItem dojoDndItemAnchor"></div>
+             <div id="dojoUnique2" class="dojoDndItem"></div> 
+            <div id="dojoUnique3" class="dojoDndItem"></div>
+            <div id="dojoUnique4" class="dojoDndItem"></div>
+            <div id="layerList" class="dojoDndSource dojoDndTarget dojoDndContainer">
+          </div>
+         <div id="popupWindow"  style="display: block;" >
+          <h2 style="color: #473c66;">ADD LAYER</h2>
+          <label class="label" >Layer Name</label>
+          <input type="text" id="layerName" name="lname" >
+          <br>
+          <label >Layer Url</label>
+          <input type="text" id="layerUrl" href="layerUrl" style="margin-left: 40px;">
+          <br>
+          <table>
+              <tr>
+                  <td><button class="btn" type="button" id="saveButton" onclick="saveLayer()">Save</button></td>
+                  <td><button class="btn" type="button" onclick="closePopupWindows()">Close</button></td>
+              </tr>
+          </table>
+      </div>
+          </div>
+          <button  class="btn" onclick="addLayersPopup()" data-dojo-type="dijit/form/Button">Add Layers </button>  
+      </div>
+      <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+        <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+        <a href="#" class="w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+      </div>
+      <div class="w3-teal">
+        <button class="w3-button w3-teal w3-xlarge w3-left" onclick="openLeftMenu()">&#9776;</button>
+        <button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+        <div class="w3-container">
+          <h1>Map</h1> 
+        </div>
+      </div>
+      <div class="w3-container">
+      </div>
+  </body>
+</html>
